@@ -10,10 +10,11 @@
 
 import get12hClock from './get12hrClock';
 
-const getTimeInAngles = (dateTime: Date) => {
-  const hours = (get12hClock(dateTime.getHours()) / 12) * 360;
-  const minutes = (dateTime.getMinutes() / 60) * 360;
-  const seconds = (dateTime.getSeconds() / 60) * 360;
+const getTimeInAngles = () => {
+  const date = new Date();
+  const hours = (get12hClock(date.getHours()) / 12) * 360;
+  const minutes = (date.getMinutes() / 60) * 360;
+  const seconds = (date.getSeconds() / 60) * 360;
   return { hours, minutes, seconds };
 };
 
