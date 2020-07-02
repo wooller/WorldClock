@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Clock from '../components/Clock/Clock';
 
 export const HomeScene = () => {
   return (
     <View>
-      <Text>Hello</Text>
+      <Clock />
     </View>
   );
 };
