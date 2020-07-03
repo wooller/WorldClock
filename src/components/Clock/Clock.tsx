@@ -75,20 +75,20 @@ const Clock = ({ time }: IProps) => {
         strokeLength={50}
       />
       <ClockHand
-        angle={time.minutes}
-        center={center}
-        radius={marksRadius}
-        stroke="#0C0F1F"
-        strokeWidth="4"
-        strokeLength={70}
-      />
-      <ClockHand
         angle={time.hours}
         center={center}
         radius={marksRadius}
         stroke="#D81F72"
         strokeWidth="4"
         strokeLength={20}
+      />
+      <ClockHand
+        angle={time.minutes}
+        center={center}
+        radius={marksRadius}
+        stroke="#0C0F1F"
+        strokeWidth="4"
+        strokeLength={70}
       />
       <Circle cx={center} cy={center} r={5} fill="#D81F72" />
     </Svg>
