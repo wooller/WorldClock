@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Dimensions } from 'react-native';
 import Svg, {
   Circle,
@@ -8,11 +8,18 @@ import Svg, {
   ClipPath,
   Rect,
 } from 'react-native-svg';
-import getTimeInAngles from '../../utils/getTimeInAngles';
-import useInterval from '../../hooks/useInterval';
+
 
 import ClockMarks from './ClockMarks';
 import ClockHand from './ClockHand';
+
+interface IProps {
+  time: {
+    hours: number;
+    minutes: number;
+    seconds: number;
+  };
+}
 
 const { width } = Dimensions.get('window');
 const diameter = width - 80;
@@ -25,13 +32,7 @@ const innerCircleRadius = innerCircleDiameter / 2;
 const radius = diameter / 2;
 const minuteMarksNum = 12 * 6;
 
-const Clock = () => {
-  const [time, setTime] = useState(getTimeInAngles);
-
-  useInterval(() => {
-    setTime(getTimeInAngles);
-  }, 1000);
-
+const Clock = ({ time }: IProps) => {
   return (
     <Svg width={width} height={width}>
       <Defs>
