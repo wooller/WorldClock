@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
+import Svg, {
+  Circle,
+  RadialGradient,
+  Defs,
+  Stop,
+  ClipPath,
+  Rect,
+} from 'react-native-svg';
 import getTimeInAngles from '../../utils/getTimeInAngles';
 import useInterval from '../../hooks/useInterval';
 
@@ -27,6 +34,30 @@ const Clock = () => {
 
   return (
     <Svg width={width} height={width}>
+      <Defs>
+        <ClipPath id="semicircle">
+          <Rect
+            x={center}
+            y={center - (radius + 15)}
+            width={radius + 15}
+            height={diameter + 30}
+          />
+        </ClipPath>
+        <RadialGradient
+          id="grad"
+          cx={center + 15}
+          cy={center}
+          rx={radius + 15}
+          ry={radius + 15}
+          fx={center + 110}
+          fy={center + 20}
+          gradientUnits="userSpaceOnUse">
+          <Stop offset="0" stopColor="#C7D6EA" stopOpacity="1" />
+          <Stop offset="0" stopColor="#C4D4E7" stopOpacity="1" />
+          <Stop offset="1" stopColor="#f7f9fc" stopOpacity="1" />
+        </RadialGradient>
+      </Defs>
+      <Circle cx={center + 15} cy={center} r={radius + 15} fill="url(#grad)" />
       <Circle cx={center} cy={center} r={radius} fill="#E7EEFB" />
       <Circle cx={center} cy={center} r={innerCircleRadius} fill="#EDF1FB" />
       <ClockMarks
