@@ -15,14 +15,3 @@ export const NavContainer = styled.View`
   flex: 1;
   display: flex;
 `;
-
-export const NavItem = styled.View<{ active?: boolean }>`
-  flex: 1;
-  opacity: ${(props) => (props.active ? 1 : 0.25)};
-`;
-
-export const NavText = styled.Text`
-  font-size: 16px;
-  color: black;
-  text-align: center;
-`;
