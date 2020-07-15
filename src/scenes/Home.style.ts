@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 
 export const ClockDetails = styled.View`
   align-items: center;
-  margin-top: 70px;
 `;
 
 export const LocationText = styled.Text`

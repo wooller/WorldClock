@@ -9,18 +9,18 @@
  */
 
 import React from 'react';
-import { StatusBar, SafeAreaView } from 'react-native';
+import { StatusBar } from 'react-native';
 import Router from './components/Router';
-import { Background } from './App.style';
+import { Background, SafeArea } from './App.style';
 
 const App = () => {
   return (
     <>
       <Background>
         <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
+        <SafeArea>
           <Router />
-        </SafeAreaView>
+        </SafeArea>
       </Background>
     </>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import NavBar from '../components/NavBar/NavBar';
 import Clock from '../components/Clock/Clock';
 import getTime from '../utils/getTime';
 import useInterval from '../hooks/useInterval';
@@ -14,13 +14,13 @@ export const HomeScene = () => {
   }, 1000);
 
   return (
-    <View>
+    <NavBar>
       <Clock time={time.analogue} />
       <ClockDetails>
         <LocationText>Genova</LocationText>
         <DigitalTimeText>{`${time.digital.hours}:${time.digital.minutes}`}</DigitalTimeText>
       </ClockDetails>
-    </View>
+    </NavBar>
   );
 };
 
