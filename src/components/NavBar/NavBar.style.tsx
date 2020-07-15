@@ -16,17 +16,13 @@ export const NavContainer = styled.View`
   display: flex;
 `;
 
-export const HomeContainer = styled.View`
+export const NavItem = styled.View<{ active?: boolean }>`
   flex: 1;
-  background-color: red;
+  opacity: ${(props) => (props.active ? 1 : 0.25)};
 `;
 
-export const ListContainer = styled.View`
-  flex: 1;
-  background-color: blue;
-`;
-
-export const SettingsContainer = styled.View`
-  flex: 1;
-  background-color: green;
+export const NavText = styled.Text`
+  font-size: 16px;
+  color: black;
+  text-align: center;
 `;

@@ -4,10 +4,9 @@ import { Dimensions } from 'react-native';
 import {
   Container,
   NavContainer,
-  HomeContainer,
-  ListContainer,
-  SettingsContainer,
+  NavItem,
   ChildrenContainer,
+  NavText,
 } from './NavBar.style';
 
 interface IProps {
@@ -19,13 +18,17 @@ const { height, width } = Dimensions.get('window');
 const NavBar = ({ children }: IProps) => {
   return (
     <Container height={height} width={width}>
-      <ChildrenContainer>
-        {children}
-      </ChildrenContainer>
+      <ChildrenContainer>{children}</ChildrenContainer>
       <NavContainer>
-        <HomeContainer />
-        <ListContainer />
-        <SettingsContainer />
+        <NavItem active>
+          <NavText>Home</NavText>
+        </NavItem>
+        <NavItem>
+          <NavText>List</NavText>
+        </NavItem>
+        <NavItem>
+          <NavText>Settings</NavText>
+        </NavItem>
       </NavContainer>
     </Container>
   );
