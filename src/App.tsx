@@ -13,6 +13,11 @@ import { StatusBar } from 'react-native';
 import Router from './components/Router';
 import { Background, SafeArea } from './App.style';
 
+/**
+ * Renders the App
+ *
+ * @return {ReactNode} The markup to render.
+ */
 const App = () => {
   return (
     <>

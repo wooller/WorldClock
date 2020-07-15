@@ -11,6 +11,13 @@ interface IProps {
 
 const { height, width } = Dimensions.get('window');
 
+/**
+ * Renders the NavBar
+ *
+ * @param {ReactNode} children The children of the NavBar
+ *
+ * @return {ReactNode} The markup to render.
+ */
 const NavBar = ({ children }: IProps) => {
   return (
     <Container height={height} width={width}>

@@ -7,15 +7,25 @@ interface IProps {
   radius: number;
   angle: number;
   strokeWidth: string;
-  stroke: string;
+  strokeColor: string;
   strokeLength?: number;
 }
 
+/**
+ * Renders the Clock Hand Component
+ * @param {Number} center The center of the clock face
+ * @param {Number} radius The radius of the clock face
+ * @param {String} strokeColor The stroke colour of the hand
+ * @param {String} strokeWidth The stroke width of the hand
+ * @param {String} strokeLength The stroke length of the hand
+ *
+ * @return {ReactNode} The markup to render.
+ */
 const ClockHand = ({
   center,
   radius,
   angle,
-  stroke,
+  strokeColor,
   strokeWidth,
   strokeLength = 0,
 }: IProps) => {
@@ -29,7 +39,7 @@ const ClockHand = ({
       y2={y}
       strokeWidth={strokeWidth}
       strokeLinecap="round"
-      stroke={stroke}
+      stroke={strokeColor}
     />
   );
 };

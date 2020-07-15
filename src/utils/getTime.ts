@@ -8,15 +8,31 @@
  *
  */
 
-import get12hClock from './get12hrClock';
+/**
+ * Converts 24hr clock to 12hr clock
+ * @param {number} hour The date to convert
+ * @return {number} hour from 1 - 12
+ */
+const convert24hrTo12hr = (hour: number): number => {
+  return hour > 12 ? hour - 12 : hour;
+};
 
+/**
+ * Converts a date into degrees to represent an analogue clock
+ * @param {Date} date The date to convert
+ * @return {Object} {analogueHours, analogueMinutes, analogueSeconds}
+ */
 const getTimeInAngles = (date: Date) => {
-  const analogueHours = (get12hClock(date.getHours()) / 12) * 360;
+  const analogueHours = (convert24hrTo12hr(date.getHours()) / 12) * 360;
   const analogueMinutes = (date.getMinutes() / 60) * 360;
   const analogueSeconds = (date.getSeconds() / 60) * 360;
   return { analogueHours, analogueMinutes, analogueSeconds };
 };
 
+/**
+ * Gets the time in analogue degrees and digital hours, mins, seconds.
+ * @return {Object} Analogue and digital hours, minutes and seconds
+ */
 const getTime = () => {
   const date = new Date();
   // eslint-disable-next-line prettier/prettier

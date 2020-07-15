@@ -9,7 +9,6 @@ import Svg, {
   Rect,
 } from 'react-native-svg';
 
-
 import ClockMarks from './ClockMarks';
 import ClockHand from './ClockHand';
 
@@ -32,6 +31,12 @@ const innerCircleRadius = innerCircleDiameter / 2;
 const radius = diameter / 2;
 const minuteMarksNum = 12 * 6;
 
+/**
+ * Renders the Clock Component
+ * @param {Object} time The time to represent
+ *
+ * @return {ReactNode} The markup to render.
+ */
 const Clock = ({ time }: IProps) => {
   return (
     <Svg width={width} height={width}>
@@ -70,7 +75,7 @@ const Clock = ({ time }: IProps) => {
         angle={time.seconds}
         center={center}
         radius={marksRadius}
-        stroke="#9FA7BC"
+        strokeColor="#9FA7BC"
         strokeWidth="4"
         strokeLength={50}
       />
@@ -78,7 +83,7 @@ const Clock = ({ time }: IProps) => {
         angle={time.hours}
         center={center}
         radius={marksRadius}
-        stroke="#D81F72"
+        strokeColor="#D81F72"
         strokeWidth="4"
         strokeLength={20}
       />
@@ -86,7 +91,7 @@ const Clock = ({ time }: IProps) => {
         angle={time.minutes}
         center={center}
         radius={marksRadius}
-        stroke="#0C0F1F"
+        strokeColor="#0C0F1F"
         strokeWidth="4"
         strokeLength={70}
       />

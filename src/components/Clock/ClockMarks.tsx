@@ -8,6 +8,14 @@ interface IProps {
   minutes: number;
 }
 
+/**
+ * Renders the Clock Hand Component
+ * @param {Number} radius The radius of the clock face
+ * @param {Number} center The center of the clock face
+ * @param {Number} minutes The number of minutes to show
+ *
+ * @return {ReactNode} The markup to render.
+ */
 const ClockMarks = ({ radius, center, minutes }: IProps) => {
   const minutesArray = new Array(minutes).fill(1);
 

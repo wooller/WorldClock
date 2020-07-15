@@ -6,6 +6,11 @@ import useInterval from '../hooks/useInterval';
 
 import { ClockDetails, LocationText, DigitalTimeText } from './Home.style';
 
+/**
+ * Renders the home scene
+ *
+ * @return {ReactNode} The markup to render.
+ */
 export const HomeScene = () => {
   const [time, setTime] = useState(getTime);
 
