@@ -7,17 +7,17 @@ export interface INavItem {
 const navItems = [
   {
     title: 'Home',
-    icon: 'HomeIcon',
+    icon: 'alarm',
     route: '/',
   },
   {
     title: 'List',
-    icon: 'ListIcon',
+    icon: 'list',
     route: '/list',
   },
   {
     title: 'Settings',
-    icon: 'SettingsIcon',
+    icon: 'settings',
     route: '/settings',
   },
 ];
