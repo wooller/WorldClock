@@ -23,7 +23,9 @@ export const HomeScene = () => {
       <Clock time={time.analogue} />
       <ClockDetails>
         <LocationText>Genova</LocationText>
-        <DigitalTimeText>{`${time.digital.hours}:${time.digital.minutes}`}</DigitalTimeText>
+        <DigitalTimeText>{`${time.digital.hours}:${(
+          '0' + time.digital.minutes
+        ).slice(-2)}`}</DigitalTimeText>
       </ClockDetails>
     </NavBar>
   );
